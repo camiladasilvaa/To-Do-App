@@ -1,0 +1,39 @@
+.info-box {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(91, 19, 198);
+  height: 120px;
+  margin-top: 70px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 350px;
+}
+
+.day {
+  margin-bottom: 0;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.complete-date {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  font-size: 25px;
+  margin-top: -7px;
+}
+
+.info-box-icon {
+  width: 500px;
+}
+

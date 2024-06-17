@@ -1,0 +1,170 @@
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+  z-index: 1000;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  box-shadow: -1px -0.1px 10px rgb(206, 206, 206);
+  transition: border-color 0.3s;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  z-index: 1000;
+  width: 100%;
+}
+
+.update-bar {
+  height: 60px;
+  margin-left: 15px;
+  padding-left: 20px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgb(146, 146, 146);
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(171, 171, 171);
+  width: 130px;
+}
+
+.update-bar::placeholder {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(171, 171, 171);
+  padding-left: 0;
+}
+
+.todo:hover {
+  border: none;
+  box-shadow: -1px -0.1px 10px rgb(183, 182, 182);
+  
+}
+
+.delete {
+  border: 0.5px solid white;
+  border-radius: 50px;
+  background-color: white;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  padding-left: 9px;
+  padding-right: 9px;
+  cursor: pointer;
+  transition: border 0.25s;
+}
+
+.delete:hover {
+  border-width: 0.5px;
+  border-color: rgb(176, 24, 24);
+  border-radius: 50px;
+}
+
+.delete:active {
+  background-color: rgb(247, 228, 228);
+}
+
+.check-box {
+  width: 25px;
+  height: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid rgb(170, 169, 169);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  margin-left: 10px;
+  opacity: 50%;
+}
+
+.check-box:checked {
+  border: 1px solid rgb(249, 173, 80);
+}
+
+.check-box::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease; 
+}
+
+.check-box:checked::before {
+  width: 18px; 
+  height: 18px;
+  background-color: rgb(249, 173, 80);
+}
+
+.content {
+  font-family: "Space Mono", monospace;
+  padding-left: -50px;
+}
+
+.todo.done .content {
+  text-decoration: line-through;
+}
+
+
+.add-bar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.input-bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(91, 19, 198);
+  background-color: white;
+  color: rgb(91, 19, 198);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  width: 100%;
+}
+
+.input-bar::placeholder {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  color: rgb(163, 131, 212);
+  padding-left: 0;
+}
+
+.single-todo-container {
+  display: flex;
+  flex-direction: row;
+}

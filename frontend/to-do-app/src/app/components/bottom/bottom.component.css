@@ -1,0 +1,36 @@
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 15px;
+}
+
+.bottom {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(91, 19, 198);
+  background-color: white;
+  color: rgb(91, 19, 198);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.bottom::placeholder {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  color: rgb(163, 131, 212);
+  padding-left: 0;
+}
+
