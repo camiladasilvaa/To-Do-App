@@ -90,7 +90,7 @@ app.get('/albums/:id', async (req, res) => {
   try {
     const response = await axios.get(`https://api.spotify.com/v1/albums/${albumId}`, {
       headers: {
-        'Authorization': `Bearer ${process.env.SPOTIFY_ACCESS_TOKEN}` // Ensure you have a valid token
+        'Authorization': `Bearer ${process.env.SPOTIFY_ACCESS_TOKEN}`
       }
     });
 
