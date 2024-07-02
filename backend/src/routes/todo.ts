@@ -90,7 +90,7 @@ router.get('/albums/:id', async (req: Request, res: Response) => {
   try {
     const response = await axios.get(`https://api.spotify.com/v1/albums/${albumId}`, {
       headers: {
-        'Authorization': `Bearer ${process.env.SPOTIFY_ACCESS_TOKEN}`
+        'Authorization': `Bearer ${process.env.()}`
       }
     });
 
