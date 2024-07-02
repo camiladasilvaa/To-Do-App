@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import { TodoService } from '../../service/todo.service';
 import { FormsModule } from '@angular/forms';
 
-interface Todo {
+export interface Todo {
   id: number;
   title: string;
   completed: boolean;
@@ -26,6 +26,7 @@ export class TodosComponent implements OnInit {
   todos: Todo[] = [];
   newTodoTitle: string = '';
   updatedTitle: string = '';
+  
 
   constructor(private todoService: TodoService) {}
 
@@ -61,6 +62,18 @@ export class TodosComponent implements OnInit {
   deleteTodo(id: number): void {
     this.todoService.deleteTodo(id).subscribe(() => {
       this.todos = this.todos.filter(todo => todo.id !== id);
+    });
+  }
+
+  toggleCompleted(todo: Todo): void {
+    this.todoService.toggleTodoCompleted(todo.id).subscribe(() => {
+      window.location.reload()
+    });
+  }
+
+  getTodo(id: number): void {
+    this.todoService.getTodo(id).subscribe((data:Todo) => {
+      console.log(data)
     });
   }
 

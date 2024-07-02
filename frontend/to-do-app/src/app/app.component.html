@@ -1,3 +1,21 @@
 <app-header></app-header>
 <app-info-box></app-info-box>
-<app-todo></app-todo>
+
+<div class="grid grid-cols-[1fr_1fr_1fr] max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
+  <div class="flex-1">
+    <app-todo></app-todo>
+  </div>
+  <div class="mt-5">
+    
+  </div>
+  <div class="mt-5 mr-2 ml-2">
+    <app-music-player></app-music-player>
+  </div>
+</div>
+
+<app-login></app-login>
+
+<router-outlet></router-outlet>
+
+
+  

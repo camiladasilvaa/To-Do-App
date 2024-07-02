@@ -33,3 +33,14 @@
   font-size: 40px;
   margin-left: 10px;
 }
+
+.time {
+  z-index: 3000;
+  font-size: 15px;
+  color: black;
+  font-family: "Space Mono", monospace;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+}

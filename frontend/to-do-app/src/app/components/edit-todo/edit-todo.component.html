@@ -1,1 +1,5 @@
-<p>edit-todo works!</p>
+<div class="update-bar-container">
+  <form>
+    <input name="updatedTitle" [id]="todo.id" [(ngModel)]="todo.title" (keyup.enter)="updateTodo(todo)" type="text" class="update-bar" placeholder="Update Task...">
+  </form>
+</div>

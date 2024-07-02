@@ -2,8 +2,8 @@
 .todos {
   display: flex;
   flex-direction: column;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   z-index: 1000;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .check-box:checked {
-  border: 1px solid rgb(249, 173, 80);
+  border: 1px solid rgb(251 191 36);
 }
 
 .check-box::before {
@@ -114,7 +114,7 @@
 .check-box:checked::before {
   width: 18px; 
   height: 18px;
-  background-color: rgb(249, 173, 80);
+  background-color: rgb(251 191 36);
 }
 
 .content {
@@ -142,9 +142,9 @@
   padding-left: 20px;
   padding-right: 10px;
   border-radius: 20px;
-  border: 1px solid rgb(91, 19, 198);
+  border: 1px solid rgb(106, 90, 132);
   background-color: white;
-  color: rgb(91, 19, 198);
+  color: rgb(106, 90, 132);
   font-size: 15px;
   display: flex;
   align-items: center;
@@ -160,7 +160,7 @@
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-size: 15px;
-  color: rgb(163, 131, 212);
+  color: rgb(106, 90, 132);
   padding-left: 0;
 }
 
@@ -168,3 +168,5 @@
   display: flex;
   flex-direction: row;
 }
+
+

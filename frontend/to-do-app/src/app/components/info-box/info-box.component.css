@@ -1,11 +1,14 @@
 .info-box {
   display: flex;
   flex-direction: row;
-  background-color: rgb(91, 19, 198);
-  height: 120px;
+  background-color: rgb(221, 216, 228);
+  height: 100px;
   margin-top: 70px;
   margin-left: 25px;
   margin-right: 25px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(106, 90, 132);
   border-radius: 25px;
   position: relative;
 }
@@ -13,7 +16,7 @@
 .date {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: rgb(106, 90, 132);
   margin-top: 15px;
   margin-left: 20px;
   width: 350px;

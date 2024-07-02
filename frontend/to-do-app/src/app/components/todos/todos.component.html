@@ -2,20 +2,29 @@
 <div class="todos flex flex-col ml-[5px] mr-[5px] z-[1000]">
   <div class="add-bar flex flex-col ml-0 mr-0 mt-[5px] mb-[30px]">
     <form>
-      <input name="newTodoTitle" [(ngModel)]="newTodoTitle" (keyup.enter)="addTodo()" class="input-bar pt-[10px] pb-[10px] pl-[20px] pr-[10px] rounded-[20px] border border-solid border-[rgb(91, 19, 198)] bg-white font-[15px] flex items-center justify-between h-[60px] font-normal font-[15px] w-full" type="text" placeholder="Add Task...">
+      <input name="newTodoTitle" minlength="1" maxlength="20" [(ngModel)]="newTodoTitle" (keyup.enter)="addTodo()" class="input-bar pt-[10px] pb-[10px] pl-[20px] pr-[10px] rounded-[20px] border border-solid border-[rgb(91, 19, 198)] bg-white font-[15px] flex items-center justify-between h-[60px] w-full" type="text" placeholder="Add Task...">
     </form>
   </div>
 
   <div *ngFor="let todo of todos">
     <div class="single-todo-container flex flex-row">
       <div class="todo {{ (todo.completed ? 'done' : '') }} flex flex-row items-center justify-between p-[10px] border-none rounded-[20px] mb-[18px] shadow-[-1px_-0.1px_10px_rgb(206, 206, 206)] transition-border-color transition-shadow duration-300 cursor-pointer z-[1000] hover:border-none hover:shadow-[-1px_-0.1px_10px_rgb(183, 182, 182)]">
-        <input type="checkbox" changeclass="check-box w-6 h-6 border border-solid border-[1px] border-[rgb(170, 169, 169)] rounded-full cursor-pointer relative ml-[10px] outline-none opacity-50 checked:border checked:border-[rgb(249, 173, 80)] checked:border-[1px]">
+        <input (click)="toggleCompleted(todo)" [id]="todo.id" type="checkbox" class="check-box w-6 h-6 border border-solid border-[rgb(170, 169, 169)] rounded-full cursor-pointer relative ml-[10px] outline-none opacity-50 checked:border checked:border-[rgb(249, 173, 80)] checked:border-[1px]" [checked]="todo.completed">
         <div class="content pl-[-50px]">{{ todo.title }}</div>
-        <button class="delete border border-solid border-white rounded-[50px] bg-white pt-[9px] pb-[7px] pl-[9px] pr-[9px] cursor-pointer transition-border duration-[0.25s] hover:border-width-[0.5px] hover:border-[rgb(176, 24, 24)] hover:rounded-[50px] active:bg-[rgb(247, 228, 228)]" (click)="deleteTodo(todo.id)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(176, 24, 24);"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>
-        </button>
+        <div class="flex flex-row items-center justify-between">
+          <div>
+            <button routerLink="/edit/{{ todo.id }}" class="border-white rounded-[50px] bg-white pt-[10px] pb-[0px] pl-[0px] pr-[0px] cursor-pointer hover:border-width-[0.5px] hover:rounded-[50px] hover:border-black">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(106, 90, 132);"><path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z"></path></svg>
+            </button>
+          </div>
+          <div>
+            <button class="delete border border-solid border-white rounded-[50px] bg-white pt-[9px] pb-[7px] pl-[9px] pr-[9px] cursor-pointer transition-border duration-[0.25s] hover:border-width-[0.5px] hover:border-[rgb(176, 24, 24)] hover:rounded-[50px] active:bg-[rgb(247, 228, 228)]" (click)="deleteTodo(todo.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(176, 24, 24);"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
+      <div class="update-bar-container hidden">
         <form>
           <input name="updatedTitle" [id]="todo.id" [(ngModel)]="todo.title" (keyup.enter)="updateTodo(todo)" type="text" class="update-bar" placeholder="Update Task...">
         </form>
@@ -24,4 +33,9 @@
     
   </div>
 </div>
+
+
+
+
+
     

@@ -34,4 +34,12 @@ export class TodoService {
   deleteTodo(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  toggleTodoCompleted(id: number): Observable<Todo> {
+    return this.http.put<Todo>(`${this.apiUrl}/${id}/toggle`, {});
+  }
+
+  getTodo(id: number): Observable<Todo> {
+    return this.http.get<Todo>(`${this.apiUrl}/${id}`);
+  }
 }
