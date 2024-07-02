@@ -84,7 +84,7 @@ router.get('/:id', async (req: Request, res: Response) => {
   }
 });
 
-app.get('/albums/:id', async (req, res) => {
+router.get('/albums/:id', async (req: Request, res: Response) => {
   const albumId = req.params.id;
 
   try {
