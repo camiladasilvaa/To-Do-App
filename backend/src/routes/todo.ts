@@ -54,4 +54,34 @@ router.delete('/:id', async (req: Request, res: Response) => {
     }
 });
 
+// Update a Todo's completed feature by ID
+router.put('/:id/toggle', async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const todo = await Todo.findByPk(id);
+  if (todo) {
+    todo.completed = !todo.completed;
+    await todo.save();
+    res.json(todo);
+  } else {
+    res.status(404).json({ message: 'Todo not found' });
+  }
+});
+
+// Get a Todo by ID
+router.get('/:id', async (req: Request, res: Response) => {
+  const { id } = req.params;
+  try {
+    const todo = await Todo.findByPk(id);
+
+    if (todo) {
+      res.json(todo);
+    } else {
+      res.status(404).json({ message: 'Todo not found' });
+    }
+  } catch (error) {
+    console.error('Error fetching todo:', error);
+    res.status(500).json({ error: 'Error fetching todo' });
+  }
+});
+
 export default router;
