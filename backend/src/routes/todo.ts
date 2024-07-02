@@ -84,4 +84,21 @@ router.get('/:id', async (req: Request, res: Response) => {
   }
 });
 
+app.get('/albums/:id', async (req, res) => {
+  const albumId = req.params.id;
+
+  try {
+    const response = await axios.get(`https://api.spotify.com/v1/albums/${albumId}`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.SPOTIFY_ACCESS_TOKEN}` // Ensure you have a valid token
+      }
+    });
+
+    res.status(200).json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred while fetching the album details' });
+  }
+});
+
 export default router;
